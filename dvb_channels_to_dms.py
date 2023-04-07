@@ -59,7 +59,7 @@ def write_dms(path_dmsdir, channels):
         f_channel_name = normalize_name(channel.name_and_pid)
         with open(os.path.join(path_dmsdir, f_channel_name+".dms.json"), "w") as f:
             audio_sel = channel.audio_pid if channel.audio_pid else ""
-            cmd = f"stream.sh {q_channel_name} {audio_sel}",
+            cmd = f"stream.sh {q_channel_name} {audio_sel}"
             i = {"Title": channel.name_and_pid, "Resources": [{
                 "MimeType": "video/x-matroska",
                 "Command": cmd,
